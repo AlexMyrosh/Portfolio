@@ -1,10 +1,73 @@
-body{
-    background: #E0FFFF
+body{ 
+    background: #E0FFFF;
+    
 }
+
 h1,p,li,div {
     font-family: 'Dancing Script', cursive;
   }
+  
   a:link    {color:black; text-decoration:none}
   a:visited {color:grey; text-decoration:none}
   a:hover   {color:black; text-decoration:underline}
   a:active  {color:black; text-decoration:underline}
+
+  @import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed');
+
+  .menu-main {
+    padding: 25px 0 5px;
+    text-align: center;
+    background: #c7fcfc;
+  }
+
+  .menu-main li {display: inline-block;}  /* Делает меню горизонтальным*/
+
+  .menu-main li:after { /* Определяет знак разделителя меню и его цвет*/
+    content: "|";
+    color: #606060;
+  }
+
+  .menu-main li:last-child:after {content: none;} /* Убирает разделитель после последнего пункта меню*/
+
+  .menu-main a { /* Определяет внешний вид надисей пунктов меню */
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 20px;
+    margin: 0 34px 0 30px;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+
+  .menu-main a.current, .menu-main a:hover{color: #feb386;} /* Пункт меню в котором сейчас находимся становится оранжевым*/
+
+  .menu-main a:before, /* При выборе курсором меню, оно плавно подчеркивает его оранжевой линией*/
+  .menu-main a:after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    top: auto;
+    right: 50%;
+    bottom: -5px;
+    left: 50%;
+    background: #feb386;
+    transition: .8s;
+  }
+  
+  .menu-main a:hover:before, .menu-main .current:before {left: 0;} /*Подчеркивает выбранное курсором меню от центра и влево*/
+  .menu-main a:hover:after, .menu-main .current:after {right: 0;}  /*Подчеркивает выбранное курсором меню от центра и вправо*/
+
+  footer{
+    width: 100%;
+    height: auto;
+    font-size: 13px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 25px;
+    background: #c7fcfc;
+  }
+
+  footer a{
+    font-size: 14px;
+    margin-left: 10px;
+  }
